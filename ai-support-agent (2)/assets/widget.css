@@ -1,0 +1,31 @@
+.aisa-root { --aisa-color: #2563eb; position: fixed; bottom: 20px; z-index: 99999; font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.aisa-root.aisa-right { right: 20px; }
+.aisa-root.aisa-left { left: 20px; }
+.aisa-launcher { width: 56px; height: 56px; border: 0; border-radius: 50%; background: var(--aisa-color); color: #fff; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; position: relative; }
+.aisa-launcher:focus-visible, .aisa-send:focus-visible, .aisa-close:focus-visible { outline: 3px solid #111; outline-offset: 2px; }
+.aisa-launcher.aisa-unread::after { content: ""; position: absolute; top: 2px; right: 2px; width: 12px; height: 12px; border-radius: 50%; background: #ef4444; border: 2px solid #fff; }
+.aisa-panel { position: absolute; bottom: 70px; width: 360px; max-width: calc(100vw - 40px); height: 520px; max-height: calc(100vh - 110px); background: #fff; color: #111; border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,.28); display: flex; flex-direction: column; overflow: hidden; }
+.aisa-panel[hidden] { display: none; }
+.aisa-right .aisa-panel { right: 0; }
+.aisa-left .aisa-panel { left: 0; }
+.aisa-head { background: var(--aisa-color); color: #fff; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; }
+.aisa-close { background: none; border: 0; color: #fff; font-size: 26px; line-height: 1; cursor: pointer; padding: 0 4px; }
+.aisa-log { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 8px; background: #f6f7f9; }
+.aisa-msg { max-width: 85%; padding: 9px 12px; border-radius: 12px; white-space: pre-wrap; word-wrap: break-word; }
+.aisa-user { align-self: flex-end; background: var(--aisa-color); color: #fff; border-bottom-right-radius: 4px; }
+.aisa-assistant, .aisa-agent { align-self: flex-start; background: #fff; border: 1px solid #e3e5e8; border-bottom-left-radius: 4px; }
+.aisa-label { display: block; font-size: 11px; font-weight: 600; color: #555; margin-bottom: 2px; }
+.aisa-note { align-self: center; max-width: 95%; font-size: 13px; color: #555; text-align: center; }
+.aisa-typing { opacity: .6; }
+.aisa-consent { font-size: 11px; color: #666; padding: 6px 14px; border-top: 1px solid #e3e5e8; background: #fff; }
+.aisa-form { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #e3e5e8; background: #fff; }
+.aisa-input { flex: 1; min-width: 0; padding: 9px 12px; border: 1px solid #c9ccd1; border-radius: 8px; font: inherit; color: #111; background: #fff; }
+.aisa-send { border: 0; background: var(--aisa-color); color: #fff; padding: 0 16px; border-radius: 8px; font: inherit; cursor: pointer; }
+.aisa-send:disabled { opacity: .5; cursor: default; }
+@media (prefers-color-scheme: dark) {
+	.aisa-panel, .aisa-consent, .aisa-form { background: #1c1d20; color: #eee; border-color: #333; }
+	.aisa-log { background: #141517; }
+	.aisa-assistant, .aisa-agent { background: #26272b; border-color: #38393d; color: #eee; }
+	.aisa-input { background: #26272b; color: #eee; border-color: #444; }
+	.aisa-note, .aisa-consent, .aisa-label { color: #aaa; }
+}
